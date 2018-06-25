@@ -1,5 +1,7 @@
 # \<blox-random\>
 
+[![Build Status](https://travis-ci.org/EOSBlox/blox-random.svg?branch=master)](https://travis-ci.org/EOSBlox/blox-scrypt)
+
 Generates a random string or number of a specified length
 
 ## Install the Polymer-CLI
