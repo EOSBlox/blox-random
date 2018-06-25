@@ -36,7 +36,7 @@ $ import 'blox-random';
 <blox-random
     length="20"
     type="number"
-    result="{{error}}">
+    result="{{result}}">
 </blox-random>
 ```
 
