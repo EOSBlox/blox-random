@@ -1,0 +1,17 @@
+{
+  "name": "blox-random",
+  "version": "1.0.0",
+  "author": "@bkawk",
+  "license": "MIT",
+  "repository": "https://github.com/eosblox/blox-random",
+  "description": "Generates a random string or number of a specified length",
+  "main": "blox-random.js",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.0"
+  }
+}
