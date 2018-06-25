@@ -19,30 +19,36 @@
       </template>
     </test-fixture>
 
-    <test-fixture id="ChangedPropertyTestFixture">
-      <template>
-        <blox-random prop1="new-prop1"></blox-random>
-      </template>
-    </test-fixture>
 
     <script type="module">
       suite('blox-random', () => {
 
-        test('instantiating the element with default properties works', () => {
+        test('ensure length is what was requested for a number', () => {
           const element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'blox-random');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello blox-random!');
+          element.setAttribute('type', 'number')
+          element.setAttribute('length', '12')
+          assert.equal(element.result.length, 12);
         });
 
-        test('setting a property on the element works', () => {
-          // Create a test fixture
-          const element = fixture('ChangedPropertyTestFixture');
-          assert.equal(element.prop1, 'new-prop1');
-          const elementShadowRoot = element.shadowRoot;
-          const elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
+        test('ensure length is not was requested for a number', () => {
+          const element = fixture('BasicTestFixture');
+          element.setAttribute('type', 'number')
+          element.setAttribute('length', '12')
+          assert.notEqual(element.result.length, 11);
+        });
+
+        test('ensure length is what was requested for a number', () => {
+          const element = fixture('BasicTestFixture');
+          element.setAttribute('type', 'string')
+          element.setAttribute('length', '14')
+          assert.equal(element.result.length, 14);
+        });
+
+        test('ensure length is not what was requested for a number', () => {
+          const element = fixture('BasicTestFixture');
+          element.setAttribute('type', 'string')
+          element.setAttribute('length', '14')
+          assert.notEqual(element.result.length, 15);
         });
 
       });
@@ -50,3 +56,6 @@
 
   </body>
 </html>
+
+
+// notEqual
